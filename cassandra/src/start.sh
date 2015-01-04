@@ -23,6 +23,7 @@ CONFIG=/etc/cassandra/conf
 rm -rf $CONFIG && cp -r $DEFAULT $CONFIG
 sed -i -e "s/^listen_address.*/listen_address: $IP/"            $CONFIG/cassandra.yaml
 sed -i -e "s/^rpc_address.*/rpc_address: 0.0.0.0/"              $CONFIG/cassandra.yaml
+sed -i -e "s/^ssl_storage_port: 7001/ssl_storage_port: 7002/"   $CONFIG/cassandra.yaml
 sed -i -e "s/# broadcast_address.*/broadcast_address: $IP/"              $CONFIG/cassandra.yaml
 sed -i -e "s/# broadcast_rpc_address.*/broadcast_rpc_address: $IP/"              $CONFIG/cassandra.yaml
 sed -i -e "s/^commitlog_segment_size_in_mb.*/commitlog_segment_size_in_mb: 64/"              $CONFIG/cassandra.yaml
